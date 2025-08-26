@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Charan Eppa</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Header Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(46, 204, 113, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: #fff;
+        }
+
+        .social-nav {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(44, 62, 80, 0.1);
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #2c3e50;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .resume-btn {
+            padding: 8px 20px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: 2px solid #2c3e50;
+        }
+
+        .resume-btn:hover {
+            background: transparent;
+            color: #2c3e50;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(39, 174, 96, 0.3) 0%, transparent 70%);
+            border-radius: 50% 0 0 50%;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            width: 100%;
+        }
+
+        .hero-text {
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #34495e;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid #2c3e50;
+        }
+
+        .hero-btn:hover {
+            background: transparent;
+            color: #2c3e50;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .profile-pic {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-placeholder {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #34495e, #2c3e50);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 5rem;
+            font-weight: bold;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-pic {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-pic-placeholder {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: bold;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        .about-text h3 {
+            color: #2ecc71;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .download-resume {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #2ecc71;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .download-resume:hover {
+            background: #27ae60;
+            transform: translateY(-2px);
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+        }
+
+        .skill-category h3 {
+            color: #2ecc71;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+        }
+
+        .skill-bar {
+            width: 60%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        /* Education Section */
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #2ecc71;
+        }
+
+        .education-item {
+            position: relative;
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: #2ecc71;
+            border-radius: 50%;
+            border: 4px solid white;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .institution {
+            color: #2ecc71;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-item .year {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .project-content p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            padding: 0.3rem 0.8rem;
+            background: #2ecc71;
+            color: white;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            text-decoration: none;
+            color: #2ecc71;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: #27ae60;
+        }
+
+        /* Experience Section */
+        .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+        .experience-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            border-left: 4px solid #2ecc71;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-header h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-header .company {
+            color: #2ecc71;
+            font-weight: 600;
+        }
+
+        .experience-header .duration {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            text-align: right;
+        }
+
+        .experience-description ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .experience-description li {
+            color: #666;
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .experience-description li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            text-align: center;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            border-radius: 15px;
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: #2ecc71;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: 600;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: #2c3e50;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #2ecc71;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .social-nav {
+                margin-top: 1rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+
+            .profile-pic,
+            .profile-placeholder {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                align-items: start;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">Sai Charan Eppa</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="social-nav">
+    <a href="https://github.com/saicharan312" target="_blank" class="social-link" title="GitHub">
+        <!-- GitHub SVG -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.18-1.1-1.5-1.1-1.5-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.36 9.36 0 0 1 12 6.84c.85.004 1.71.12 2.51.35 1.91-1.33 2.75-1.05 2.75-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.58.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+        </svg>
+    </a>
+    <a href="https://www.linkedin.com/in/saicharaneppa" target="_blank" class="social-link" title="LinkedIn">
+        <!-- LinkedIn SVG -->
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path fill="currentColor" d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.75 1.38-1.54 2.84-1.54 3.04 0 3.6 2 3.6 4.59v4.72z"/>
+        </svg>
+    </a>
+    <a href="Sai_Charan_Eppa_resume.pdf" class="resume-btn" download>Resume</a>
+</div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Cloud MLOps Engineer</h1>
+                <p class="hero-subtitle">Student & Aspiring Developer</p>
+                <p class="hero-description">Hi, I am Sai Charan Eppa, focusing on creating innovative solutions and learning cutting-edge technologies.</p>
+            </div>
+            <div class="hero-image">
+                <!-- Replace with your actual photo -->
+                <img src="photo.jpg" alt="Sai Charan Eppa" class="profile-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="profile-placeholder" style="display: none;">SE</div>
+            </div>
+        </div>
+    </section>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Myself</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="#" alt="About Sai Charan Eppa" class="about-pic" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="about-pic-placeholder" style="display: none;">SE</div>
+                </div>
+                <div class="about-text">
+                    <h3>About Myself</h3>
+                    <p>I'm a passionate Computer Science student, who loves clean, simple & unique design. I also enjoy crafting innovative solutions to complex problems.</p>
+                    <p>Currently pursuing my master's degree in Computer Science, I'm eager to apply my knowledge in real-world projects and gain hands-on experience in setting up Cloud based MLops pipeline .</p>
+                    <p>When I'm not coding, you can find me exploring new technologies, contributing to open source projects, or sharing knowledge with the developer community.</p>
+                    <a href="Sai_Charan_Eppa_resume.pdf" class="download-resume" onclick="downloadResume()">DOWNLOAD RESUME</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-item">
+                        <span>Python</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Java</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>C++</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+        <h3>Frameworks & Libraries</h3>
+        <div class="skill-item">
+          <span>NumPy</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Pandas</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Scikit-Learn</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 75%;"></div>
+          </div>
+        </div>
+        <div class="skill-item">
+          <span>Matplotlib</span>
+          <div class="skill-bar">
+            <div class="skill-progress" style="width: 70%;"></div>
+          </div>
+        </div>
+      </div>
+                <div class="skill-category">
+                    <h3>Tools and Platforms</h3>
+                    <div class="skill-item">
+                        <span> Visual Studio Code</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>MetaMask</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Ganache</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>Google Cloud</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <div class="skill-item">
+                        <span>MySQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <span>PostgreSQL</span>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-timeline">
+                <div class="education-item">
+                    <h3>Master of Science in Computer Science</h3>
+                    <div class="institution">University of Alabama at Birmingham</div>
+                    <div class="year">2024 - 2026 (Expected)</div>
+                    <p>Relevant coursework: Advanced Algorithms and Applications, Database Systems, Data Mining, Foundations of Data Science, Machine Learning</p>
+                    <p><strong>GPA:</strong> 3.55/4.0</p>
+                </div>
+                <div class="education-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <div class="institution">Osmania University</div>
+                    <div class="year">2019 - 2023</div>
+                    <p><strong>GPA:</strong> 3.1/4.0</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-image">🔗</div>
+        <div class="project-content">
+          <h3>Decentralized E-Voting Portal Using Blockchain</h3>
+          <p>Developed a secure online voting system leveraging blockchain’s immutable ledger, ensuring transparency, reducing intermediaries, and enhancing trust in the electoral process.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Solidity</span>
+            <span class="tech-tag">Ganache</span>
+            <span class="tech-tag">MetaMask</span>
+            <span class="tech-tag">Web3.js</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/saicharan312/Decentralized-E-Voting-Portal" target="_blank" class="project-link">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">⚡</div>
+        <div class="project-content">
+          <h3>Energy Dashboard Analytics (GCP + Vertex AI)</h3>
+          <p>Built an end-to-end GCP data pipeline to process energy consumption data, retrain ML models with Vertex AI, and deploy predictions through Cloud Run with real-time visualization.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Vertex AI</span>
+            <span class="tech-tag">BigQuery</span>
+            <span class="tech-tag">Cloud Run</span>
+            <span class="tech-tag">Python</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/saicharan312/Energy-Dashboard-Analytics" target="_blank" class="project-link">GitHub →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">🤖</div>
+        <div class="project-content">
+          <h3>AI-Powered School Meal Program Analysis</h3>
+          <p>Analyzed large datasets to identify nutritional deficiencies in school meals and improve attendance/enrollment. Designed ML models to optimize nutrition planning and impact assessment.</p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">Pandas</span>
+            <span class="tech-tag">Scikit-Learn</span>
+            <span class="tech-tag">Matplotlib</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/saicharan312/School-Meal-Analysis" target="_blank" class="project-link">GitHub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="experience-list">
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>Cloud MLOps Engineer Intern</h3>
+            <div class="company">QuantumCore Technologies</div>
+          </div>
+          <div class="duration">May 2025 – Present</div>
+        </div>
+        <div class="experience-description">
+          <ul>
+            <li>Built and deployed ML models using Vertex AI, Cloud Run, and Docker for real-time energy optimization and quantum system simulation.</li>
+            <li>Engineered secure data workflows across GCS and BigQuery, while managing cloud infrastructure and debugging pipelines.</li>
+            <li>Contributed to scalable AI systems, gaining hands-on experience in cloud-native MLOps practices.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="experience-item">
+        <div class="experience-header">
+          <div>
+            <h3>Embedded Systems Intern</h3>
+            <div class="company">DRDO</div>
+          </div>
+          <div class="duration">Jun 2023 – Aug 2023</div>
+        </div>
+        <div class="experience-description">
+          <ul>
+            <li>Engineered missile orientation models with Altair Embed, reducing manual coding time by 30%.</li>
+            <li>Integrated adaptive noise cancellation into signal processing algorithms, reducing interference by 15 dB and improving target acquisition reliability.</li>
+          </ul>
+        </div>
+      </div>
+
+     </div>
+    </div>
+    </section>
+        <!-- Certifications Section -->
+    <section id="certifications" class="section">
+      <div class="container">
+        <h2 class="section-title">Certifications</h2>
+        <div class="education-timeline">
+          <div class="education-item">
+            <h3>Google Cloud Digital Leader</h3>
+            <div class="institution">Google Cloud</div>
+            <div class="year">Issued: 2024</div>
+            <p>Credential demonstrating expertise in cloud fundamentals and Google Cloud services.</p>
+          </div>
+          <div class="education-item">
+            <h3>Machine Learning with Python</h3>
+            <div class="institution">Coursera (IBM)</div>
+            <div class="year">Issued: 2023</div>
+            <p>Hands-on specialization covering supervised and unsupervised ML, using Scikit-Learn and Python.</p>
+          </div>
+          <div class="education-item">
+            <h3>Blockchain Basics</h3>
+            <div class="institution">Coursera (University at Buffalo)</div>
+            <div class="year">Issued: 2022</div>
+            <p>Introduction to decentralized applications, smart contracts, and cryptographic primitives.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-content">
+          <p>If you’d like to connect, collaborate, or discuss opportunities, feel free to reach out!</p>
+          <form class="contact-form" action="https://formspree.io/f/xnnbqopn" method="POST">
+            <div style="display:grid; gap:1rem; max-width:500px; margin:2rem auto;">
+              <input type="text" name="name" placeholder="Your Name" required 
+                     style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+              <input type="email" name="email" placeholder="Your Email" required 
+                     style="padding:12px; border-radius:8px; border:1px solid #ccc;">
+              <textarea name="message" rows="5" placeholder="Your Message" required 
+                        style="padding:12px; border-radius:8px; border:1px solid #ccc;"></textarea>
+              <button type="submit" 
+                      style="padding:12px; border:none; border-radius:25px; background:#2ecc71; color:white; font-weight:bold; cursor:pointer; transition:0.3s;">
+                Send Message
+              </button>
+            </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </section>
+</body> 
+</html>
+
+     
+
+
